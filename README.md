@@ -1,1 +1,1 @@
-# Simple_calculator
+# Web Calculator in JS OOP
