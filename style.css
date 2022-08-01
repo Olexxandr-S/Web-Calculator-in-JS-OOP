@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgba(202, 169, 224, 0.836);
+  }
+
+.keyboard {
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    }
+    
+    .seven { grid-area: 1 / 1 / 2 / 2; }
+    .eight { grid-area: 1 / 2 / 2 / 3; }
+    .nine { grid-area: 1 / 3 / 2 / 4; }
+    .division { grid-area: 1 / 4 / 2 / 5; }
+    .arrow { grid-area: 1 / 5 / 2 / 6; }
+    .four { grid-area: 2 / 1 / 3 / 2; }
+    .five { grid-area: 2 / 2 / 3 / 3; }
+    .six { grid-area: 2 / 3 / 3 / 4; }
+    .multiplication { grid-area: 2 / 4 / 3 / 5; }
+    .delete { grid-area: 2 / 5 / 3 / 6; }
+    .one { grid-area: 3 / 1 / 4 / 2; }
+    .two { grid-area: 3 / 2 / 4 / 3; }
+    .three { grid-area: 3 / 3 / 4 / 4; }
+    .minus { grid-area: 3 / 4 / 4 / 5; }
+    .zero { grid-area: 4 / 1 / 5 / 4; }
+    .dot { grid-area: 4 / 3 / 5 / 4; }
+    .plus { grid-area: 4 / 4 / 5 / 5; }
+    .equal { grid-area: 3 / 5 / 5 / 6; }
+
+.keyboard > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px, solid #ffffff;
+    background-color: rbga(255, 255, 255, 0.75);
+  }
+
+.keyboard > button:hover {
+    background-color: #a9a9a9;
+  }
