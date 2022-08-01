@@ -1,6 +1,6 @@
 .screen {
-  width: 388px;
-  height: 70px;
+  width: 24.2rem;
+  height: 6rem;
   border: 2px solid black;
   background-color: rgba(184, 218, 186, 0.75);
   display: flex;

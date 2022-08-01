@@ -1,3 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to left, #8bbb8d, #617e64);
+}
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
 .keyboard {
   background: gray;
   border-bottom: 5px solid gray;
