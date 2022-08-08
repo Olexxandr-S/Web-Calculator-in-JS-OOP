@@ -26,7 +26,28 @@
   - display = 12;
   - history = ["3 + 3 = 6", "6 + 3 = 9", "9 + 3 = 12"]
 
-# 3: (2, +, 3, +, +..., -..., *...)
+# 3: (3, +, 6, =, =, =)
+- click "3":
+  - display = 3;
+  - history = "[]"
+- click "+":
+  - display = 3; 
+  - history = ["3 +"]
+- click "6":
+  - display = 6;
+  - history = ["3 +"]
+- click "=":
+  - display = 9;
+  - history = ["3 + 6 = 9"]
+---
+- click "=":
+  - display = 15;
+  - history = ["3 + 6 = 9", "9 + 6 = 15"]
+---
+- click "=":
+  - display = 21;
+  - history = ["3 + 6 = 9", "9 + 6 = 15", "15 + 6 = 21"]
+# 4: (2, +, 3, +, +..., -..., *...)
 - click "2":
   - display = 2; 
   - history = "[]"
