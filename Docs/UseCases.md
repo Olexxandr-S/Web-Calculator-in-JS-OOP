@@ -75,3 +75,58 @@
 - click "*":
   - display = 5; 
   - history = ["2 + 3 = 5", "5 *"]
+
+# 5: (3, +, 6, +, +, =, =)
+- click "3":
+  - display = 3;
+  - history = "[]"
+- click "+":
+  - display = 3; 
+  - history = ["3 +"]
+- click "6":
+  - display = 6;
+  - history = ["3 +"]
+- click "+":
+  - display = 9;
+  - history = ["3 + 6 = 9", "9 +"]
+---
+- click "+":
+  - display = 9;
+  - history = ["3 + 6 = 9", "9 +"]
+---
+- click "=":
+  - display = 18;
+  - history = ["3 + 6 = 9", "9 + 9 = 18"]
+  ---
+- click "=":
+  - display = 27;
+  - history = ["3 + 6 = 9", "9 + 9 = 18", "18 + 9 = 27"]
+
+# 6: (3, + 6, +, =, =, *, =)
+- click "3":
+  - display = 3;
+  - history = "[]"
+- click "+":
+  - display = 3; 
+  - history = ["3 +"]
+- click "6":
+  - display = 6;
+  - history = ["3 +"]
+- click "+":
+  - display = 9;
+  - history = ["3 + 6 = 9", "9 +"]
+- click "=":
+  - display = 18;
+  - history = ["3 + 6 = 9", "9 + 9 = 18"]
+---
+- click "=":
+  - display = 27;
+  - history = ["3 + 6 = 9", "9 + 9 = 18", "18 + 9 = 27"]
+---
+- click "*":
+  - display = 27;
+  - history = ["3 + 6 = 9", "9 + 9 = 18", "18 + 9 = 27", "27 *"]
+---
+- click "=":
+  - display = 27;
+  - history = ["3 + 6 = 9", "9 + 9 = 18", "18 + 9 = 27", "27 * 27 = 729"]
