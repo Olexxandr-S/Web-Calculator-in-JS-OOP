@@ -1,0 +1,132 @@
+# 1: (3, +, =)
+- click "3":
+  - display = 3; 
+  - history = "[]"
+- click "+":
+  - display = 3; 
+  - history = ["3 +"]
+- click "=":
+  - display = 6;
+  - history = ["3 + 3 = 6"]
+
+# 2: (3, +, =, =, =)
+- click "3":
+  - display = 3; 
+  - history = "[]"
+- click "+":
+  - display = 3; 
+  - history = ["3 +"]
+- click "=":
+  - display = 6;
+  - history = ["3 + 3 = 6"]
+- click "=":
+  - display = 9;
+  - history = ["3 + 3 = 6", "6 + 3 = 9"]
+- click "=":
+  - display = 12;
+  - history = ["3 + 3 = 6", "6 + 3 = 9", "9 + 3 = 12"]
+
+# 3: (3, +, 6, =, =, =)
+- click "3":
+  - display = 3;
+  - history = "[]"
+- click "+":
+  - display = 3; 
+  - history = ["3 +"]
+- click "6":
+  - display = 6;
+  - history = ["3 +"]
+- click "=":
+  - display = 9;
+  - history = ["3 + 6 = 9"]
+---
+- click "=":
+  - display = 15;
+  - history = ["3 + 6 = 9", "9 + 6 = 15"]
+---
+- click "=":
+  - display = 21;
+  - history = ["3 + 6 = 9", "9 + 6 = 15", "15 + 6 = 21"]
+# 4: (2, +, 3, +, +..., -..., *...)
+- click "2":
+  - display = 2; 
+  - history = "[]"
+- click "+":
+  - display = 2; 
+  - history = ["2 +"]
+- click "3":
+  - display = 3; 
+  - history = ["2 +"]
+- click "+":
+  - display = 5; 
+  - history = ["2 + 3 = 5", "5 +"]
+---
+- click "+":
+  - display = 5; 
+  - history = ["2 + 3 = 5", "5 +"]
+- click "+":
+  - display = 5; 
+  - history = ["2 + 3 = 5", "5 +"]
+---
+- click "-":
+  - display = 5; 
+  - history = ["2 + 3 = 5", "5 -"]
+---
+- click "*":
+  - display = 5; 
+  - history = ["2 + 3 = 5", "5 *"]
+
+# 5: (3, +, 6, +, +, =, =)
+- click "3":
+  - display = 3;
+  - history = "[]"
+- click "+":
+  - display = 3; 
+  - history = ["3 +"]
+- click "6":
+  - display = 6;
+  - history = ["3 +"]
+- click "+":
+  - display = 9;
+  - history = ["3 + 6 = 9", "9 +"]
+---
+- click "+":
+  - display = 9;
+  - history = ["3 + 6 = 9", "9 +"]
+---
+- click "=":
+  - display = 18;
+  - history = ["3 + 6 = 9", "9 + 9 = 18"]
+  ---
+- click "=":
+  - display = 27;
+  - history = ["3 + 6 = 9", "9 + 9 = 18", "18 + 9 = 27"]
+
+# 6: (3, + 6, +, =, =, *, =)
+- click "3":
+  - display = 3;
+  - history = "[]"
+- click "+":
+  - display = 3; 
+  - history = ["3 +"]
+- click "6":
+  - display = 6;
+  - history = ["3 +"]
+- click "+":
+  - display = 9;
+  - history = ["3 + 6 = 9", "9 +"]
+- click "=":
+  - display = 18;
+  - history = ["3 + 6 = 9", "9 + 9 = 18"]
+---
+- click "=":
+  - display = 27;
+  - history = ["3 + 6 = 9", "9 + 9 = 18", "18 + 9 = 27"]
+---
+- click "*":
+  - display = 27;
+  - history = ["3 + 6 = 9", "9 + 9 = 18", "18 + 9 = 27", "27 *"]
+---
+- click "=":
+  - display = 27;
+  - history = ["3 + 6 = 9", "9 + 9 = 18", "18 + 9 = 27", "27 * 27 = 729"]
