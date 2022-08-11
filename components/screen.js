@@ -13,6 +13,10 @@ export default class Screen {
         this.root.appendChild(this.display.getView());
     }
 
+    addHistory(record) {
+        this.history.add(record);
+    }
+
     getView() {
         return this.root;
     }
@@ -20,12 +24,27 @@ export default class Screen {
 
 class History {
     constructor() {
-        this.init()
+        this.history = new Array();
+        this.lastValue = {};
+        this.init();
     }
 
     init() {
         this.root = document.createElement("div");
         this.root.className = "history";
+    }
+
+    add({a, action}) {
+        this.lastValue = {a: a, action: action};
+        this.history.push(this.lastValue);
+    }
+
+    update({b, result}) {
+        Object.assign(this.lastValue, {b: b, result: result});
+    }
+
+    clear() {
+        this.history = new Array();
     }
 
     getView() {
@@ -36,11 +55,11 @@ class History {
 class Display {
     static maxLen = 16;
     constructor() {
+        this.value = 0;
         this.init();
     }
 
     init() {
-        this.value = 0;
         this.root = document.createElement("div");
         this.root.className = "display";
         this.root.innerText = this.value;
