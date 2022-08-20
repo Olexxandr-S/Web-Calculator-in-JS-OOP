@@ -24,14 +24,13 @@ export default class Screen {
 
 class History {
     constructor() {
-        this.history = new Array();
-        this.lastValue = {};
         this.init();
+        this.clear();
     }
 
     init() {
         this.root = document.createElement("div");
-        this.root.className = "history";
+        this.root.className = "history"; 
     }
 
     add({a, action}) {
@@ -45,10 +44,26 @@ class History {
 
     clear() {
         this.history = new Array();
+        this.lastValue = {};
+        this.render();
     }
 
     getView() {
         return this.root;
+    }
+
+    render() {
+                
+        // if `a` and `action` are present show `$a $action`
+        // if `a` and `action` and `b` are present show `$a $action $b =`
+
+        if(this.lastValue.a && this.lastValue.action && this.lastValue.b) {
+            this.root.innerText = `${this.lastValue.a} ${this.lastValue.action} ${this.lastValue.b} =`;
+        } else if(this.lastValue.a && this.lastValue.action) {
+            this.root.innerText = `${this.lastValue.a} ${this.lastValue.action}`;
+        } else {
+            this.root.innerText = "";
+        }
     }
 }
 
@@ -68,8 +83,8 @@ class Display {
     display(value) {
         this.value = value;
 
-        this.root.innerText = String(value).length > maxLen ? 
-            Number.toExponential(this.value) : this.value;
+        this.root.innerText = String(value).length > Display.maxLen ? 
+            Number(this.value).toExponential() : this.value;
     }
 
     getView() {
