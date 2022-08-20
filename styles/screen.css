@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 .screen {
   width: 24.2rem;
   height: 6rem;
@@ -15,13 +17,14 @@
   border: 5px solid gray;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  color: rgb(0, 0, 0);
+  font-family: 'Orbitron', sans-serif;
 }
 
 .history {
-  color: rgba(255, 255, 255, 0.75);
   font-size: 1rem;
 }
+
 .display {
-  color: white;
   font-size: 2rem;
 }

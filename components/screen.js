@@ -20,6 +20,8 @@ export default class Screen {
 
 class History {
     constructor() {
+        this.history = new Array();
+        this.value = {};
         this.init()
     }
 
@@ -28,19 +30,43 @@ class History {
         this.root.className = "history";
     }
 
+    add({a, action}) {
+        this.value = {a: a, action: action};
+        this.history.push(this.value);
+    }
+
+    update({b, result}) {
+        Object.assign(this.value, {b: b, result:result });
+    }
+
+    clear() {
+        this.history = new Array();
+        this.value = {};
+        this.render();
+    }
+
+    render() {
+        this.root.innerText = this.history.length > 0 ?
+            "$a $action $b $equal"
+            .replace("$a", this.value.a ? this.value.a : "")
+            .replace("$action", this.value.action ? this.value.action : "")
+            .replace("$b $equal", this.value.b && this.value.result ? `${this.value.b} =` : "")
+            .trim() : ""
+    }
+
     getView() {
         return this.root;
     }
 }
 
 class Display {
-    static maxLen = 16;
+    static MAX_LEN = 16;
     constructor() {
+        this.value = 0;
         this.init();
     }
 
     init() {
-        this.value = 0;
         this.root = document.createElement("div");
         this.root.className = "display";
         this.root.innerText = this.value;
@@ -49,8 +75,8 @@ class Display {
     display(value) {
         this.value = value;
 
-        this.root.innerText = String(value).length > maxLen ? 
-            Number.toExponential(this.value) : this.value;
+        this.root.innerText = String(value).length > Display.MAX_LEN ? 
+            Number(this.value).toExponential() : this.value;
     }
 
     getView() {
