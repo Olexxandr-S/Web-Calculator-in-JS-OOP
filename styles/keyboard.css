@@ -4,11 +4,14 @@ body {
   background: linear-gradient(to left, #8bbb8d, #617e64);
 }
 #root {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   margin-top: 5rem;
+  grid-template-areas:
+    "history screen screen"
+    "history keyboard keyboard"
+    "history keyboard keyboard";
 }
 
 .keyboard {
@@ -22,6 +25,7 @@ body {
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 2px;
   grid-row-gap: 2px;
+  grid-area: keyboard;
 }
 
 .seven {
@@ -88,4 +92,26 @@ body {
 
 .keyboard > button:hover {
   background-color: #3a833a;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background: #617e64;
+  }
+  #root {
+    margin-top: 2rem;
+    grid-template-areas:
+      "screen screen"
+      "keyboard keyboard"
+      "history history";
+  }
+  .keyboard > button {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .keyboard > button {
+    font-size: 2rem;
+  }
 }
