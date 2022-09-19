@@ -1,6 +1,6 @@
 .screen {
-  width: 24.2rem;
-  height: 6rem;
+  width: 24.25rem;
+  min-height: 6rem;
   border: 2px solid black;
   background-color: rgba(184, 218, 186, 0.75);
   display: flex;
@@ -15,7 +15,8 @@
   border: 5px solid gray;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
+  grid-area: screen;
 }
 
 .history {
@@ -25,4 +26,46 @@
 .display {
   color: rgb(0, 0, 0);
   font-size: 2rem;
+}
+
+#all-history {
+  padding: 0.5rem;
+  height: 40vh;
+  max-width: 10rem;
+  border: 1px dotted black;
+  background: gainsboro;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  font-family: sans-serif;
+  grid-area: history;
+  margin-right: 1rem;
+}
+.history-button {
+  align-self: flex-start;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .screen {
+    width: 16.8rem;
+    min-height: 4.5rem;
+  }
+  #all-history {
+    height: 35vh;
+    max-width: 17.6rem;
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .screen {
+    width: 14.25rem;
+    min-height: 4.5rem;
+  }
+  #all-history {
+    height: 35vh;
+    max-width: 15.3rem;
+    margin-top: 1rem;
+  }
 }

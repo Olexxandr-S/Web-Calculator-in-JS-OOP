@@ -19,20 +19,24 @@ export default class CalculationStack {
   // setter:
   set dp(value) {
     let number = this.action ? this.b : this.a;
-    if(!`${number}`.includes(".")) {
+    if (!`${number}`.includes(".")) {
       this.#dp = value;
     }
   }
 
   addDigit(digit) {
     if (this.action) {
-      this.b = Number(String(this.b ? this.b : 0) + (this.#dp ? "." + digit : digit));
+      this.b = Number(
+        String(this.b ? this.b : 0) + (this.#dp ? "." + digit : digit)
+      );
       this.#dp = false;
       return this.b;
     } else {
-        this.a = Number(String(this.a ? this.a : 0) + (this.#dp ? "." + digit : digit));
-        this.#dp = false;
-        return this.a;
+      this.a = Number(
+        String(this.a ? this.a : 0) + (this.#dp ? "." + digit : digit)
+      );
+      this.#dp = false;
+      return this.a;
     }
   }
 
@@ -51,5 +55,4 @@ export default class CalculationStack {
   calculate() {
     return this.action.do(this.a, this.b);
   }
-
 }

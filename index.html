@@ -7,10 +7,15 @@
     <title>Web calculator</title>
     <link href="./styles/screen.css" rel="stylesheet" />
     <link href="./styles/keyboard.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div id="all-history" style="display: none">History<br /></div>
+    </div>
     <script type="module">
       import Calculator from "./components/calculator.js";
       Calculator.createCalculator();
